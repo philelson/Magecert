@@ -126,7 +126,7 @@ The `_isPkAutoIncrement` flag is set to `true` as a default and can be overwritt
 
 ### Collection Interface
 
-*Collection Models* provide a consistent interface for performing filtering and sorting of models, e.g. `addFieldToFlter()`, `addOrder()` and `setOrder()`.
+*Collection Models* provide a consistent interface for performing filtering and sorting of models, e.g. `addFieldToFilter()`, `addOrder()` and `setOrder()`.
 
 ### Group Save Operations
 
@@ -159,7 +159,7 @@ The first method goes through the collection interface, which could perform addi
 - `model_delete_after`
 - `model_delete_commit_after`
 - `{collection_event_prefix}_load_before`
-- `{collection_event_prefix}_liad_after`
+- `{collection_event_prefix}_load_after`
 
 ### Setup, Read and Write Database Resources
 
@@ -191,7 +191,7 @@ Then the install and upgrade scripts, which are simply PHP scripts executed by i
 The scripts use the following naming scheme:
 
 - `install-{version}.php`
-- `update-{from_version}-{to_version}.php`
+- `upgrade-{from_version}-{to_version}.php`
 - `data-install-{version}.php`
 - `data-upgrade-{from_version}-{to_version}.php`
 
@@ -240,3 +240,5 @@ Magento abstracts database engine logic by using the `Varien_Db_Adapter_Interfac
     <li class="prev"><a href="/rendering.html">&larr; Rendering</a>
     <li class="next"><a href="/eav.html">EAV &rarr;</a></li>
 </ul>
+
+

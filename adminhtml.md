@@ -133,6 +133,57 @@ Grids print out collection data in a table, with the ability to filter and sort.
 
 Grids typically extend the `Mage_Adminhtml_Block_Widget_Grid` class and by default use the `app/design/adminhtml/default/default/template/widget/grid.phtml` template.
 
+They are prepaired in the following order:
+
+1. Columns are prepaired
+2. Massaction Block is prepaired
+3. Collection is prepaired
+    1. Page and Page Size are set
+    2. Filters are applied
+    3. Ordering is applied
+    4. Load is called on the collection
+
+```php
+<?php
+
+    protected function _beforeToHtml()
+    {
+        $this->_prepareGrid();
+        return parent::_beforeToHtml();
+    }
+
+    protected function _prepareGrid()
+    {
+        $this->_prepareColumns();
+        $this->_prepareMassactionBlock();
+        $this->_prepareCollection();
+        return $this;
+    }
+
+    protected function _prepareCollection()
+    {
+        if ($this->getCollection()) {
+
+            $this->_preparePage();
+            //...
+            if (is_string($filter)) {
+                $data = $this->helper('adminhtml')->prepareFilterString($filter);
+                $this->_setFilterValues($data);
+            }
+            else if ($filter && is_array($filter)) {
+                $this->_setFilterValues($filter);
+            }
+            else if(0 !== sizeof($this->_defaultFilter)) {
+                $this->_setFilterValues($this->_defaultFilter);
+            }
+            //...
+        }
+
+        return $this;
+    }
+?>
+```
+
 ### Filters
 
 When a column is added to a grid, a filter can be added.  For example, for numbers the `adminhtml/widget_grid_column_filter_range` can be used.

@@ -6,22 +6,52 @@ noToc: true
 
 <div id="home">
 
-  <p>Revision notes for the Magento Developer Certification exam.</p>
+  <p>Revision notes for the Magento Certified Developer &amp; Magento Certified Developer Plus exams.</p>
 
-  <h2>Chapters</h2>
+  <h2>Certified Developer Chapters</h2>
 
-  <ol>
-    {% for chapter in (1..10) %}
-      {% for page in site.pages %}
+    <ol>
+        {% for chapter in (1..10) %}
+            {% for page in site.pages %}
+                {% if page.chapter == chapter %}
+                    <li>
+                        <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+                        <p>{{ page.meta-description %}}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ol>
+
+    <h2>Certified Developer Plus Chapters</h2>
+
+    <ol>
+        {% for chapter in (11..14) %}
+            {% for page in site.pages %}
+                {% if page.chapter == chapter %}
+                    <li>
+                        <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+                        <p>{{ page.meta-description %}}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ol>
+
+    <h2>XML Lookup</h2>
+
+    <ol>
+        {% for chapter in (20..30) %}
+        {% for page in site.pages %}
         {% if page.chapter == chapter %}
-          <li>
+        <li>
             <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
             <p>{{ page.meta-description %}}
-          </li>
+        </li>
         {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </ol>
+        {% endfor %}
+        {% endfor %}
+    </ol>
 
   <h2>Study Guide Questions</h2>
   <p>Alternatively, use the <a href="/questions.html">Study Guide Questions</a> index.</p>

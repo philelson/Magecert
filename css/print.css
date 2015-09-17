@@ -1,0 +1,9 @@
+body {
+    color: #333;
+    font-family: 'Open Sans', 'sans-serif';
+    font-size: 10px;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+}

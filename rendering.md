@@ -72,7 +72,7 @@ There are two events that are fired around block rendering that can be used to m
 2. `core_block_abstract_to_html_after`
 
 
-A child block will only be rendered automatically if it is of class `Mage_Core_Block_Textlist` otherwise the `getChildHtml` method needs to be called.
+A child block will only be rendered automatically if it is of class `Mage_Core_Block_Text_List` otherwise the `getChildHtml` method needs to be called.
 
 
 Block instances can be accessed through the layout, e.g. `Mage::app()->getLayout()` and `$controller->getLayout()`.  Block output is controlled by the `_toHtml()` function.  
