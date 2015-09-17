@@ -12,5 +12,5 @@ Thanks for contributions from:
 - [Tomas Gerulaitis](http://twitter.com/tgerulaitis)
 - [Tom Robertshaw](http://twitter.com/bobbyshaw)
 - [Vinai Kopp](http://twitter.com/vinaikopp)
-- [Philip Elson](http://twitter.com/phil_elson)
+- [Phil Elson](http://twitter.com/phil_elson)
 

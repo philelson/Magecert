@@ -21,7 +21,7 @@ Then you define the actions on products which match the conditions, such as 10% 
 
 #### `Enterprise_TargetRule`
 
-`Enterprise_TargetRule` is the module behind `Rule-Based Product Relations` and adds ability for admins to create a more relevant shopping experience by rules (cross sell / up sell etc) targetted at __specific customer segments__
+`Enterprise_TargetRule` is the module behind `Rule-Based Product Relations` and adds the ability for admins to create a more relevant shopping experience for **cross selling**, **up selling** and **related products**, targetted at __specific customer segments__
 
 Rules are in the format:
 
@@ -30,9 +30,9 @@ Rules are in the format:
 
 ### Tabs
 
-### Rule Information
+#### Rule Information
 
-This tab contains information about the rule, _name, priotiry, status, active dates, customer segment and where 'to apply' the rules_
+This tab contains information about the rule, such as _name, priotiry, status, active dates, customer segment_ and where 'to apply' the rules
 
 Conditions can 'apply to'
 
@@ -40,15 +40,15 @@ Conditions can 'apply to'
 2. Up Sell
 3. Related Products
 
-### Products to Match
+#### Products to Match
 Product Matchers can apply to
 
 1. Attributes
 2. Attribute Sets
 3. Categories
 
-### Products to Display
-Product to Display can apply to
+#### Products to Display
+Product to display can apply to
 
 1. Attributes
 2. Attribute Sets
@@ -59,7 +59,7 @@ Product to Display can apply to
 
 ##How does the module store the data in the database?
 
-Data from the admin is stored in 3 core tables:
+Data from the admin is stored in 3 tables:
 
 1. __enterprise\_targetrule__ This table contains general information about the Rule, such as it's name, status, active dates, serialized actions and conditions etc. It is the main table used by the `Enterprise_TargetRule_Model_Resource_Rule` model.
 2. __enterprise\_targetrule\_customersegment__ This table joins the target rule with a customer segment if one has been set in the conditions. `Enterprise_TargetRule_Model_Resource_Rule` provides CRUD operations for this table.
@@ -79,7 +79,7 @@ Data from the admin is stored in 3 core tables:
     <table>enterprise_targetrule_customersegment</table>
 </segment>
 ```
-You'll notice __customersegment__ and __segment__ table alias' reference the same table name, I can only assume this is mistake left in for backward compatibility, `enterprise_targetrule/segment`
+You'll notice __customersegment__ and __segment__ table alias' reference the same table name, I can only assume this has been left in for backward compatibility, `enterprise_targetrule/segment`
 is only used in `Enterprise_TargetRule_Model_Resource_Rule_Collection` where as `enterprise_targetrule/customersegment` is used in `Enterprise_TargetRule_Model_Resource_Rule` and various upgrade scripts.
 
 ### Indexes

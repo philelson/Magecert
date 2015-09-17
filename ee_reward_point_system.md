@@ -24,7 +24,7 @@ The actions, rules and e-mails for the store are configured in `System > Configu
 
 ### How do the features offered by the reward point system hook into other Magento modules?
 
-Config.xml shows that the module doesn't rewrite **any** models, helper or blocks. The main way it interacts with other models is via the events they dispatch, and it listens to a lot of events:
+Config.xml shows that the module doesn't rewrite **any** models, helpers or blocks. The main way it interacts with other models is via the events the other modules dispatch, such as:
 
 1. __newsletter\_subscriber\_save\_commit\_after__
 2. __paypal\_prepare\_line\_items__
